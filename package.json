@@ -1,5 +1,5 @@
 {
-  "name": "fullstack-next-store",
+  "name": "trelet-store",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -33,6 +33,7 @@
     "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "trelet-store": "file:",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
