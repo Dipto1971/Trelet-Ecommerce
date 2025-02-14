@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ValidationRule, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import useSWR from 'swr';
@@ -10,7 +10,6 @@ import useSWRMutation from 'swr/mutation';
 
 import { Product } from '@/lib/models/ProductModel';
 import { formatId } from '@/lib/utils';
-import { useState } from 'react';
 
 export default function ProductEditForm({ productId }: { productId: string }) {
   const [isFeatured, setIsFeatured] = useState(false);
