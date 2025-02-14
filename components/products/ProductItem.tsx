@@ -17,7 +17,7 @@ const ProductItem = async ({ product }: { product: Product }) => {
     <div className='card mb-4 bg-base-300'>
       <figure>
         <Link
-          href={`/product/${product.slug}`}
+          href={`/product/${product._id}`}
           className='relative aspect-square h-full w-full'
         >
           <Image

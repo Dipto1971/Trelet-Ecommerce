@@ -35,7 +35,13 @@ const getFeatured = async () => {
 const getBySlug = cache(async (slug: string) => {
   await dbConnect();
   const product = await ProductModel.findOne({ slug }).lean();
-  return product as Product;
+  return product as unknown as Product;
+});
+
+const getBy_id = cache(async (_id: string) => {
+  await dbConnect();
+  const product = await ProductModel.findById(_id).lean();
+  return product as unknown as Product;
 });
 
 const PAGE_SIZE = 3;
@@ -139,6 +145,7 @@ const productService = {
   getByQuery,
   getCategories,
   getTopRated,
+  getBy_id,
 };
 
 export default productService;

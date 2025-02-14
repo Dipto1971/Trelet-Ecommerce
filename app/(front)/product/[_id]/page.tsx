@@ -11,9 +11,9 @@ import { convertDocToObj } from '@/lib/utils';
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string };
+  params: { _id: string };
 }) => {
-  const product = await productService.getBySlug(params.slug);
+  const product = await productService.getBy_id(params._id);
 
   if (!product) {
     return notFound();
@@ -25,8 +25,8 @@ export const generateMetadata = async ({
   };
 };
 
-const ProductPage = async ({ params }: { params: { slug: string } }) => {
-  const product = await productService.getBySlug(params.slug);
+const ProductPage = async ({ params }: { params: { _id: string } }) => {
+  const product = await productService.getBy_id(params._id);
 
   if (!product) {
     return notFound();
